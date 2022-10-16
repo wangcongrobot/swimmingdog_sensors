@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="atm_pressure" default="101325.0" />
+  <arg name="water_density" default="1027.0" />
+
+  <!-- publish bar30 measurement -->
+  <node respawn="true" pkg="swimmingdog_sensors" type="barometer.py"  name="bar30_listener" output = "screen">
+  <param name="atm_pressure" value="$(arg atm_pressure)"/>
+  <param name="water_density" value="$(arg water_density)"/>
+  </node>
+
+</launch>
